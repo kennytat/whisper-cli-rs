@@ -34,6 +34,10 @@ struct Args {
     /// Generate timestamps for each word
     #[clap(short, long, default_value = "false")]
     karaoke: bool,
+
+    /// Logs verbose output
+    #[clap(short, long, default_value = "false")]
+    verbose: bool,
 }
 
 #[tokio::main]
@@ -55,7 +59,7 @@ async fn main() {
 
     let mut whisper = Whisper::new(Model::new(args.model), args.lang).await;
     let transcript = whisper
-        .transcribe(audio, args.translate, args.karaoke)
+        .transcribe(audio, args.translate, args.karaoke, args.verbose)
         .unwrap();
 
     write_to(
