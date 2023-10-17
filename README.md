@@ -19,6 +19,12 @@ This project attempts to build a simple Whisper CLI with Rust, to replace the ba
 
 You can download the binary corresponding to your OS from the [latest release](https://github.com/m1guelpf/whisper-cli-rs/releases/latest), or build it from scratch with `cargo install whisper_cli`.
 
+```bash
+wget https://github.com/kennytat/whisper-cli-rs/releases/download/v1.0.5/whisper-linux-x86_64 -o whisper
+sudo chmod u+x whisper-linux-x86_64
+sudo mv whisper-linux-x86_64 /usr/bin/whisper
+```
+
 ## Run from anywhere
 
 Put the `whisper` binary in `/usr/local/bin` on Unix systems (Mac/Linux) & make sure it has permissions to execute (use `chmod +x whisper` in terminal.)
@@ -63,7 +69,10 @@ Options:
 
 ## Develop
 
+```
+sudo apt-get -y install libssl-dev
 Make sure you have the latest version of rust installed (use [rustup](https://rustup.rs/)). Then, you can build the project by running `cargo build`, and run it with `cargo run`.
+```
 
 ## License
 

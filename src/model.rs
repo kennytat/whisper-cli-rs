@@ -24,6 +24,8 @@ pub enum Size {
     Large,
     #[clap(name = "large-v1")]
     LargeV1,
+    #[clap(name = "large-v2")]
+    LargeV2,
 }
 
 impl Size {
@@ -57,6 +59,7 @@ impl Display for Size {
             Self::Medium => "medium",
             Self::Large => "large",
             Self::LargeV1 => "large-v1",
+            Self::LargeV2 => "large-v2",
         };
 
         write!(f, "{key}")
